@@ -1,0 +1,30 @@
+@use "@/styles/index" as *;
+
+.textComponentContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  padding-bottom: 293px;
+
+  .textComponentLeftBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    max-width: 722px;
+
+    .textComponentTitle {
+      font-family: $font-clash;
+      font-size: 48px;
+      font-weight: $font-weight-medium;
+      line-height: 100%;
+    }
+
+    .textComponentSubtitle {
+      font-size: 20px;
+      font-weight: $font-weight-small;
+      line-height: 28px;
+    }
+  }
+}
