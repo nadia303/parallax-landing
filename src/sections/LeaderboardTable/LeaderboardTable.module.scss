@@ -1,0 +1,60 @@
+@use "@/styles/index" as *;
+
+.leaderboardTableContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-bottom: 1047px;
+
+  .leaderBoardTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .leaderBoardTitle {
+      font-family: $font-clash;
+      font-size: 48px;
+      font-weight: $font-weight-medium;
+      line-height: 100%;
+    }
+
+    .leaderBoardSubtitle {
+      font-size: 20px;
+      font-weight: $font-weight-small;
+      line-height: 32px;
+    }
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  .tableHeaderCell:nth-child(3) {
+    text-align: left;
+  }
+
+  .tableHeaderCell {
+    padding: 22px 12px;
+    text-align: right;
+    font-weight: $font-weight-large;
+    font-weight: $font-weight-large;
+    white-space: nowrap;
+  }
+
+  .table td {
+    padding: 26px 12px;
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .table td:nth-child(3) {
+    text-align: left;
+  }
+
+  .table tbody tr:nth-child(odd) {
+    background-color: #c9d9ff14;
+  }
+}
