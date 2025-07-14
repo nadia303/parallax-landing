@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Clash Grotesk";
+  src:
+    url("../../public/fonts/ClashGrotesk/ClashGrotesk-Medium.woff2") format("woff2"),
+    url("../../public/fonts/ClashGrotesk/ClashGrotesk-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src:
+    url("../../public/fonts/ClashGrotesk/ClashGrotesk-Semibold.woff2") format("woff2"),
+    url("../../public/fonts/ClashGrotesk/ClashGrotesk-Semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}

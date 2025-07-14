@@ -1,0 +1,25 @@
+$button-gradient: 106.2deg, #963488 -12.33%, #fc6f32 50.28%, #ff4a59 114.17%;
+$header-gradient: 109.22deg, #b53ea4 3.07%, #fc6f32 47.61%, #ff4a59 93.05%;
+$background-color: #000000;
+$text-color: #ffffff;
+$gray-color: #8f99b0;
+$gray-color-dark: #8e8e8e;
+$transition-base: 0.3s ease;
+
+// Typography
+$font-family-base: "Helvetica Neue", sans-serif;
+$font-family-heading: "Georgia", serif;
+$font-size-base: 24px;
+$font-size-small: 18px;
+$font-weight-small: 400;
+$font-weight-medium: 500;
+$font-weight-large: 600;
+$font-inter: "Inter", sans-serif;
+$font-metrophobic: "Metrophobic", sans-serif;
+$font-clash: "Clash Grotesk", sans-serif;
+
+// Breakpoints
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 1200px;
+$breakpoint-extra-large: 1760px;
