@@ -1,0 +1,65 @@
+@use "@/styles/index" as *;
+
+.button {
+  font-weight: 500;
+  font-size: $font-size-base;
+  line-height: 100%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  color: var(--white);
+  background-color: transparent;
+  transition: $transition-base;
+}
+
+.regular {
+  background: linear-gradient(45deg, #ff6b6b, #f1c40f);
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  &.medium {
+    padding: 24px 48px;
+  }
+
+  &.small {
+    font-size: 20px;
+    padding: 24px 48px;
+  }
+
+  &:hover {
+    color: transparent;
+    background: linear-gradient($button-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+.outline {
+  border: 2px solid transparent;
+  border-radius: 91px;
+  padding: 22px 48px 24px;
+  background: linear-gradient(#242424, #242424) padding-box,
+    linear-gradient($button-gradient) border-box;
+
+  &.medium {
+    padding: 14px 32px 16px;
+  }
+
+  &.small {
+    font-size: $font-size-small;
+    padding: 12px 32px;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      106.2deg,
+      #963488 -12.33%,
+      #fc6f32 50.28%,
+      #ff4a59 114.17%
+    );
+  }
+}

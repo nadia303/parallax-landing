@@ -1,0 +1,9 @@
+@use "@/styles/index" as *;
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 32px;
+}

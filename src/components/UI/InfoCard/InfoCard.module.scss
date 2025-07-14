@@ -1,0 +1,31 @@
+@use "@/styles/index" as *;
+
+.infoCardContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 91px;
+  background: linear-gradient(
+    106.2deg,
+    rgba(150, 52, 136, 0.2) -12.33%,
+    rgba(252, 111, 50, 0.2) 50.28%,
+    rgba(255, 74, 89, 0.2) 114.17%
+  );
+  padding: 32px 32px;
+
+  .infoCardNumber {
+    font-family: $font-clash;
+    font-size: 64px;
+    font-weight: $font-weight-large;
+    line-height: 100%;
+  }
+
+  .infoCardText {
+    font-size: $font-size-base;
+    font-weight: $font-weight-small;
+    line-height: 100%;
+  }
+}
