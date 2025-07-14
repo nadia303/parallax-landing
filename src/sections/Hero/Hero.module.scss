@@ -1,0 +1,40 @@
+@use "@/styles/index" as *;
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 100px 0 397px;
+  height: 1016px;
+
+  .heroInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 36px;
+    max-width: 1629px;
+
+    .title {
+      font-family: $font-clash;
+      font-size: 128px;
+      font-weight: $font-weight-medium;
+      line-height: 100%;
+      color: transparent;
+      background: linear-gradient($header-gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    .subtitle {
+      font-size: $font-size-base;
+      font-weight: $font-weight-small;
+      line-height: 100%;
+    }
+  }
+
+  .heroNumbers {
+    display: flex;
+    justify-content: space-between;
+    gap: 33px;
+  }
+}
