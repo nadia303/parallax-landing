@@ -1,0 +1,22 @@
+@use "@/styles/index" as *;
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  padding-bottom: 467px;
+
+  .projectsTitle {
+    font-family: $font-clash;
+    font-size: 48px;
+    font-weight: $font-weight-medium;
+    line-height: 100%;
+  }
+
+  .projectsIconsContainer {
+    display: flex;
+    align-items: center;
+    gap: 180px;
+  }
+}
