@@ -1,22 +1,86 @@
 @use "@/styles/index" as *;
 
 .projectsContainer {
+  position: relative;
+  height: 120vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
-  padding-bottom: 467px;
+  justify-content: center;
+  scroll-snap-align: start;
+  overflow: hidden;
+  z-index: 10;
 
-  .projectsTitle {
-    font-family: $font-clash;
-    font-size: 48px;
-    font-weight: $font-weight-medium;
-    line-height: 100%;
-  }
-
-  .projectsIconsContainer {
+  .projectsContent {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 180px;
+    gap: 48px;
+    z-index: 10;
+
+    .projectsTitle {
+      font-family: $font-clash;
+      font-size: 64px;
+      font-weight: $font-weight-medium;
+      line-height: 100%;
+      z-index: 10;
+      width: 100vw;
+      padding-left: 80px;
+      padding-right: 80px;
+      text-align: center;
+    }
+
+    .projectsIconsContainer {
+      display: flex;
+      align-items: center;
+      gap: 180px;
+      z-index: 10;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-large) {
+  .projectsContainer {
+    margin-top: 200vh;
+
+    .projectsContent {
+      .projectsTitle {
+        max-width: 100%;
+        padding-left: 32px;
+        padding-right: 32px;
+        text-align: start;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small) {
+  .projectsContainer {
+    .projectsContent {
+      .projectsTitle {
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 765px) {
+  .projectsContainer {
+    .projectsContent {
+      .projectsTitle {
+        font-size: 2.5rem;
+      }
+
+      .projectsIconsContainer {
+        gap: 40px;
+
+        svg {
+          transform: scale(0.5);
+        }
+      }
+    }
   }
 }
