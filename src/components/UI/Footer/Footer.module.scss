@@ -57,6 +57,8 @@
       text-decoration: none;
 
       &:hover {
+        color: $gray-color;
+        transition: $transition-base;
       }
     }
   }
@@ -73,6 +75,8 @@
     text-decoration: none;
 
     &:hover {
+      color: $gray-color;
+      transition: $transition-base;
     }
   }
 }
@@ -81,4 +85,39 @@
   height: 1px;
   width: 100%;
   border: 1px solid $gray-color-dark;
+}
+
+@media (max-width: $breakpoint-medium) {
+  .footerBottom {
+    justify-content: center;
+
+    .footerLeft {
+      display: none;
+    }
+
+    .footerRight {
+      a {
+        font-size: 12px;
+        font-weight: $font-weight-small;
+        line-height: 100%;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .footerContentContainer {
+    gap: 12px;
+  }
+
+  .footerCenter {
+    gap: 20px;
+  }
+
+  .footerBottom {
+    .footerRight {
+      gap: 12px;
+    }
+  }
 }

@@ -1,9 +1,36 @@
 @use "@/styles/index" as *;
 
 .headerContainer {
+  top: 0;
+  left: 50%;
+  height: 84px;
+  transform: translateX(-50%);
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 48px;
-  margin-top: 32px;
+  z-index: 10;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+}
+
+@media (max-width: 500px) {
+  .headerContainer {
+    height: fit-content;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 16px;
+
+    button {
+      width: 100%;
+    }
+  }
 }
