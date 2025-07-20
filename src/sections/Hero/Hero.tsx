@@ -1,13 +1,7 @@
 "use client";
 
 import classNames from "classnames";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionValueEvent,
-  useSpring,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/UI";
 import styles from "./Hero.module.scss";
@@ -15,27 +9,22 @@ import styles from "./Hero.module.scss";
 const Hero = () => {
   const ref = useRef(null);
 
-  const { scrollYProgress: scrollYProgressButton, scrollY } = useScroll({
+  const { scrollY: scrollYButton } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
 
-  const { scrollYProgress: scrollYProgressTitle } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  const { scrollYProgress: scrollYProgressTitle, scrollY: scrollYTitle } =
+    useScroll({
+      target: ref,
+      offset: ["start start", "end start"],
+    });
 
-  const textYRaw = useTransform(scrollYProgressTitle, [0, 1], ["0%", "-20%"]);
-
-  const textY = useSpring(textYRaw, {
-    stiffness: 100,
-    damping: 20,
-    mass: 1,
-  });
-
-  const button1Y = useTransform(scrollY, [0, 100], ["100%", "-30%"]);
-  const button2Y = useTransform(scrollY, [0, 100], ["150%", "-30%"]);
-  const button3Y = useTransform(scrollY, [0, 100], ["200%", "-30%"]);
+  const textY = useTransform(scrollYTitle, [0, 180], ["0%", "-15%"]);
+  const textScale = useTransform(scrollYTitle, [0, 180], ["1", "0.98"]);
+  const button1Y = useTransform(scrollYButton, [0, 120], ["50%", "-120%"]);
+  const button2Y = useTransform(scrollYButton, [0, 120], ["100%", "-120%"]);
+  const button3Y = useTransform(scrollYButton, [0, 120], ["150%", "-120%"]);
 
   const titleColor =
     "linear-gradient(109.22deg, #b53ea4 3.07%, #fc6f32 47.61%, #ff4a59 93.05%)";
@@ -48,18 +37,6 @@ const Hero = () => {
   );
 
   const textClip = useTransform(scrollYProgressTitle, [0, 1], ["text", "text"]);
-
-  useMotionValueEvent(scrollYProgressButton, "change", (latest) => {
-    console.log("scrollYProgressButton", latest);
-  });
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("scrollY hero", latest);
-  });
-
-  //   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //     console.log("scrollYProgress hero", latest);
-  //   });
 
   return (
     <section
@@ -78,6 +55,7 @@ const Hero = () => {
             backgroundClip: textClip,
             WebkitBackgroundClip: "text",
             color: "transparent",
+            scale: textScale,
           }}
         >
           A new economic primitive for funding decentralized AI

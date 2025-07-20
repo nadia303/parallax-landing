@@ -12,20 +12,16 @@ const TextComponent = () => {
 
   const { scrollYProgress: yScrollProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end start"],
+    offset: ["start start", "end end"],
   });
 
   const { scrollYProgress: opacityScrollProgress } = useScroll({
     target: ref,
-    offset: ["start center", "end center"],
+    offset: ["start start", "end center"],
   });
 
-  const y = useTransform(yScrollProgress, [0, 1], ["-20%", "10%"]);
-  const opacity = useTransform(
-    opacityScrollProgress,
-    [0, 0.8, 1],
-    [1, 0.5, 0.1]
-  );
+  const y = useTransform(yScrollProgress, [0, 1], ["100%", "-20%"]);
+  const opacity = useTransform(opacityScrollProgress, [0, 0.7, 1], [1, 1, 0.1]);
 
   return (
     <section

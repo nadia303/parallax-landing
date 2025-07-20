@@ -12,7 +12,7 @@ const Header = () => {
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsFixed(latest < 200);
+    setIsFixed(latest < 100);
   });
 
   return (

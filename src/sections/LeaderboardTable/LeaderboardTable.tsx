@@ -15,10 +15,10 @@ const LeaderboardTable = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center end"],
+    offset: ["start center", "end center"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [400, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], ["30%", "-50%"]);
 
   return (
     <motion.section

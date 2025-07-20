@@ -15,7 +15,7 @@ const Projects = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "start start"],
+    offset: ["start start", "end end"],
   });
 
   const { scrollYProgress: scrollYProgressX } = useScroll({
@@ -23,8 +23,8 @@ const Projects = () => {
     offset: ["start end", "end start"],
   });
 
-  const x = useTransform(scrollYProgressX, [0, 1], ["1%", "-95%"]);
-  const y = useTransform(scrollYProgress, [0, 1], [1000, 0]);
+  const x = useTransform(scrollYProgressX, [0, 1], ["0%", "-30%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["100%", "-10%"]);
 
   return (
     <section

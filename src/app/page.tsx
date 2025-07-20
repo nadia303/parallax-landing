@@ -2,19 +2,13 @@ import classNames from "classnames";
 import ReactLenis from "lenis/react";
 import styles from "./page.module.scss";
 import { Footer, Header } from "@/components/UI";
-import {
-  BuildTheBestAI,
-  Hero,
-  LeaderboardTable,
-  Projects,
-  TextComponent,
-} from "@/sections";
+import { BuildTheBestAI, Hero, LeaderboardTable, Projects } from "@/sections";
 
 export default function Home() {
   return (
     <div>
       <main>
-        <ReactLenis root options={{ duration: 1.5 }}>
+        <ReactLenis root>
           <div className={classNames(styles.containerWithPlanet)}>
             <Header />
             <div
@@ -36,7 +30,6 @@ export default function Home() {
           </div>
           <div>
             <LeaderboardTable />
-            <TextComponent />
           </div>
         </ReactLenis>
       </main>
