@@ -5,14 +5,19 @@ import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import styles from "./Header.module.scss";
 import Button from "../Button/Button";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const Header = () => {
-  const [isFixed, setIsFixed] = useState(true);
+  const [isFixed, setIsFixed] = useState(false);
   const ref = useRef(null);
   const { scrollY } = useScroll();
+  const { width } = useWindowSize();
+  const isMobile = width < 500;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsFixed(latest < 100);
+    if (!isMobile) {
+      setIsFixed(latest < 140);
+    }
   });
 
   return (
@@ -21,8 +26,8 @@ const Header = () => {
       className={classNames(
         styles.headerContainer,
         {
-          [styles.fixed]: isFixed,
-          [styles.absolute]: !isFixed,
+          [styles.fixed]: isFixed && !isMobile,
+          [styles.absolute]: !isFixed || isMobile,
         },
         "container"
       )}

@@ -5,9 +5,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/UI";
 import styles from "./Hero.module.scss";
+// import { useWindowSize } from "@/hooks/useWindowSize";
 
 const Hero = () => {
   const ref = useRef(null);
+//   const { width } = useWindowSize();
+//   const isMobile = width < 500;
 
   const { scrollY: scrollYButton } = useScroll({
     target: ref,
@@ -22,9 +25,9 @@ const Hero = () => {
 
   const textY = useTransform(scrollYTitle, [0, 180], ["0%", "-15%"]);
   const textScale = useTransform(scrollYTitle, [0, 180], ["1", "0.98"]);
-  const button1Y = useTransform(scrollYButton, [0, 120], ["50%", "-120%"]);
-  const button2Y = useTransform(scrollYButton, [0, 120], ["100%", "-120%"]);
-  const button3Y = useTransform(scrollYButton, [0, 120], ["150%", "-120%"]);
+  const button1Y = useTransform(scrollYButton, [0, 100], ["400%", "-120%"]);
+  const button2Y = useTransform(scrollYButton, [0, 100], ["450%", "-120%"]);
+  const button3Y = useTransform(scrollYButton, [0, 100], ["500%", "-120%"]);
 
   const titleColor =
     "linear-gradient(109.22deg, #b53ea4 3.07%, #fc6f32 47.61%, #ff4a59 93.05%)";
@@ -81,15 +84,15 @@ const Hero = () => {
           className={styles.infoCardContainer}
           style={{ y: button2Y }}
         >
-          <p className={styles.infoCardNumber}>10,873</p>
-          <p className={styles.infoCardText}>LLM models</p>
+          <p className={styles.infoCardNumber}>$72,470,728</p>
+          <p className={styles.infoCardText}>paid to data scientists</p>
         </motion.div>
         <motion.div
           className={styles.infoCardContainer}
           style={{ y: button3Y }}
         >
-          <p className={styles.infoCardNumber}>10,873</p>
-          <p className={styles.infoCardText}>LLM models</p>
+          <p className={styles.infoCardNumber}>6,557</p>
+          <p className={styles.infoCardText}>members</p>
         </motion.div>
       </div>
     </section>
