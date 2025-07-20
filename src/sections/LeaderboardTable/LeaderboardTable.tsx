@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import classNames from "classnames";
 import { useScroll, useTransform, motion } from "motion/react";
-
 import { leaderboardHeaders, LeaderboardRow, leaderboardRows } from "./data";
 import styles from "./LeaderboardTable.module.scss";
 import ArrowUp from "../../../public/icons/table/arrow-up.svg";
@@ -38,38 +37,40 @@ const LeaderboardTable = () => {
           to test LLMs on a large number of different evaluation tasks. The
           higher the score, the better the LLM.
         </p>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              {leaderboardHeaders.map((header, index) => (
-                <th key={index} className={styles.tableHeaderCell}>
-                  {header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {leaderboardRows.slice(0, 8).map((row: LeaderboardRow, index) => (
-              <tr key={index}>
-                <td>
-                  {row.trend === "up" && <ArrowUp />}
-                  {row.trend === "down" && <ArrowDown />}
-                  {row.trend === "same" && <Same />}
-                </td>
-                <td>{index + 1}</td>
-                <td>{row.name}</td>
-                <td>{row.average}</td>
-                <td>{row.arc}</td>
-                <td>{row.hellaswag}</td>
-                <td>{row.mmlu}</td>
-                <td>{row.truthqa}</td>
-                <td>{row.winogrande}</td>
-                <td>{row.gsm8k}</td>
-                <td>{row.earnings}</td>
+        <div className={styles.tableWrapper}>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                {leaderboardHeaders.map((header, index) => (
+                  <th key={index} className={styles.tableHeaderCell}>
+                    {header}
+                  </th>
+                ))}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {leaderboardRows.slice(0, 8).map((row: LeaderboardRow, index) => (
+                <tr key={index}>
+                  <td>
+                    {row.trend === "up" && <ArrowUp />}
+                    {row.trend === "down" && <ArrowDown />}
+                    {row.trend === "same" && <Same />}
+                  </td>
+                  <td>{index + 1}</td>
+                  <td>{row.name}</td>
+                  <td>{row.average}</td>
+                  <td>{row.arc}</td>
+                  <td>{row.hellaswag}</td>
+                  <td>{row.mmlu}</td>
+                  <td>{row.truthqa}</td>
+                  <td>{row.winogrande}</td>
+                  <td>{row.gsm8k}</td>
+                  <td>{row.earnings}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </motion.div>
     </motion.section>
   );

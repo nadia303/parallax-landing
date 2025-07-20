@@ -18,6 +18,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
 
       .leaderBoardTitle {
         font-family: $font-clash;
@@ -33,8 +35,26 @@
       }
     }
 
+    .tableWrapper {
+      width: 100%;
+      overflow-x: auto;
+
+      // Optional: for better UX on mobile
+      scrollbar-width: thin;
+
+      &::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(100, 100, 100, 0.4);
+        border-radius: 4px;
+      }
+    }
+
     .table {
       width: 100%;
+      min-width: 960px; // Ensures scroll triggers when screen < this
       border-collapse: collapse;
       font-size: 16px;
       line-height: 100%;
@@ -47,7 +67,6 @@
     .tableHeaderCell {
       padding: 22px 12px;
       text-align: right;
-      font-weight: $font-weight-large;
       font-weight: $font-weight-large;
       white-space: nowrap;
     }
@@ -64,6 +83,19 @@
 
     .table tbody tr:nth-child(odd) {
       background-color: #c9d9ff14;
+    }
+  }
+}
+
+@media (max-width: 765px) {
+  .leaderboardTableContainer {
+    .leaderBoardTable {
+      .leaderBoardTitleContainer {
+        .leaderBoardTitle {
+          font-size: 2.5rem;
+          line-height: 3rem;
+        }
+      }
     }
   }
 }
