@@ -9,12 +9,13 @@
   gap: 20px;
   border-radius: 91px;
   background: linear-gradient(
-    106.2deg,
-    rgba(150, 52, 136, 0.2) -12.33%,
-    rgba(252, 111, 50, 0.2) 50.28%,
-    rgba(255, 74, 89, 0.2) 114.17%
+    105.65deg,
+    rgba(150, 52, 136, 0.2) 0.15%,
+    rgba(252, 111, 50, 0.2) 130.58%,
+    rgba(255, 74, 89, 0.2) 263.64%
   );
   padding: 32px 32px;
+  z-index: 10;
 
   .infoCardNumber {
     font-family: $font-clash;

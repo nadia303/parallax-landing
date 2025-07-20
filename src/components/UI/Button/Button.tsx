@@ -3,13 +3,13 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "regular" | "outline";
-  size?: "medium" | "small";
+  size?:"large"| "medium" | "small";
   children: React.ReactNode;
 }
 
 const Button = ({
   variant = "regular",
-  size = "medium",
+  size = "large",
   children,
   className,
   ...props

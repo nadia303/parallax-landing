@@ -11,10 +11,10 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
   font-family: $font-inter;
   color: $text-color;
   background-color: $background-color;
+  scroll-snap-align: y mandatory;
 }
 
 a {
@@ -46,23 +46,17 @@ a {
 }
 
 @media (max-width: $breakpoint-large) {
-  .container {
+  .container,
+  .smaller-container {
     max-width: 100%;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-}
-
-@media (max-width: $breakpoint-medium) {
-  .container {
-    max-width: 100%;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 32px;
+    padding-right: 32px;
   }
 }
 
 @media (max-width: $breakpoint-small) {
-  .container {
+  .container,
+  .smaller-container {
     max-width: 100%;
     padding-left: 16px;
     padding-right: 16px;

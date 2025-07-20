@@ -14,6 +14,7 @@
   color: var(--white);
   background-color: transparent;
   transition: $transition-base;
+  z-index: 10;
 }
 
 .regular {
@@ -21,8 +22,13 @@
   -webkit-background-clip: text;
   background-clip: text;
 
-  &.medium {
+  &.large {
     padding: 24px 48px;
+  }
+
+  &.medium {
+    padding: 16px 24px;
+    font-size: 18px;
   }
 
   &.small {
@@ -45,8 +51,13 @@
   background: linear-gradient(#242424, #242424) padding-box,
     linear-gradient($button-gradient) border-box;
 
+  &.large {
+    padding: 24px 48px;
+  }
+
   &.medium {
-    padding: 14px 32px 16px;
+    padding: 16px 24px;
+    font-size: 18px;
   }
 
   &.small {
@@ -63,3 +74,4 @@
     );
   }
 }
+
