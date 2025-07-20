@@ -1,27 +1,33 @@
 @use "@/styles/index" as *;
 
 .heroContainer {
+  position: absolute;
+  transform: translateX(-50%);
+  top: 0;
+  left: 50%;
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  padding: 100px 0 397px;
-  height: 1016px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  z-index: 10;
 
   .heroInfo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding-top: 316px;
+    padding-bottom: 152px;
     gap: 36px;
     max-width: 1629px;
 
     .title {
+      position: relative;
       font-family: $font-clash;
       font-size: 128px;
       font-weight: $font-weight-medium;
       line-height: 100%;
       color: transparent;
-      background: linear-gradient($header-gradient);
-      background-clip: text;
       -webkit-background-clip: text;
     }
 
@@ -29,6 +35,14 @@
       font-size: $font-size-base;
       font-weight: $font-weight-small;
       line-height: 100%;
+      color: $text-color;
+      z-index: 10;
+    }
+
+    .buttonsContainer {
+      display: flex;
+      gap: 24px;
+      z-index: 10;
     }
   }
 
@@ -36,5 +50,114 @@
     display: flex;
     justify-content: space-between;
     gap: 33px;
+    width: 100%;
+
+    .infoCardContainer {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      border-radius: 91px;
+      background: linear-gradient(
+        105.65deg,
+        rgba(150, 52, 136, 0.2) 0.15%,
+        rgba(252, 111, 50, 0.2) 130.58%,
+        rgba(255, 74, 89, 0.2) 263.64%
+      );
+      padding: 32px 32px;
+      z-index: 10;
+
+      .infoCardNumber {
+        font-family: $font-clash;
+        font-size: 64px;
+        font-weight: $font-weight-large;
+        line-height: 100%;
+      }
+
+      .infoCardText {
+        font-size: $font-size-base;
+        font-weight: $font-weight-small;
+        line-height: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1730px) {
+  .heroContainer .heroInfo {
+    .title {
+      font-size: 90px;
+    }
+    .subtitle {
+      font-size: $font-size-base;
+      line-height: 150%;
+    }
+  }
+
+  .heroContainer {
+    .heroNumbers {
+      gap: 20px;
+
+      .infoCardContainer {
+        .infoCardNumber {
+          font-size: 40px;
+        }
+
+        .infoCardText {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .heroContainer .heroInfo {
+    .title {
+      font-size: 70px;
+    }
+  }
+}
+
+@media (max-width: 765px) {
+  .heroContainer {
+    height: 300vh;
+
+    .heroInfo {
+      padding-bottom: 80px;
+
+      .title {
+        font-size: 3rem;
+      }
+    }
+
+    .heroNumbers {
+      flex-direction: column;
+
+      .infoCardContainer {
+        .infoCardNumber {
+          font-size: 40px;
+        }
+
+        .infoCardText {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .heroContainer .heroInfo {
+    .title {
+      font-size: 3rem;
+    }
+
+    .buttonsContainer {
+      flex-direction: column;
+      width: 100%;
+    }
   }
 }
