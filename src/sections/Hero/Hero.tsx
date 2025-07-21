@@ -26,11 +26,11 @@ const Hero = () => {
 
   const textY = useTransform(scrollYTitle, [0, 180], ["0%", "-15%"]);
   const textScale = useTransform(scrollYTitle, [0, 180], ["1", "0.95"]);
-  const button1Range = isMobile ? [0.3, 0.4] : [0.225, 0.4];
-  const button2Range = isMobile ? [0.4, 0.5] : [0.25, 0.425];
-  const button3Range = isMobile ? [0.5, 0.6] : [0.375, 0.45];
+  const button1Range = isMobile ? [0.5, 0.6] : [0.225, 0.4];
+  const button2Range = isMobile ? [0.6, 0.7] : [0.25, 0.425];
+  const button3Range = isMobile ? [0.7, 0.8] : [0.375, 0.45];
   const button1Y = useTransform(scrollYButton, button1Range, ["400%", "-80%"]);
-  const button2Y = useTransform(scrollYButton, button2Range, ["450%", "-80%"]);
+  const button2Y = useTransform(scrollYButton, button2Range, ["400%", "-80%"]);
   const button3Y = useTransform(scrollYButton, button3Range, ["500%", "-80%"]);
 
   const titleColor =

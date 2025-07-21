@@ -9,13 +9,18 @@ import ArrowUp from "../../../public/icons/table/arrow-up.svg";
 import ArrowDown from "../../../public/icons/table/arrow-down.svg";
 import Same from "../../../public/icons/table/minus.svg";
 import { Button } from "@/components/UI";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const LeaderboardTable = () => {
   const ref = useRef(null);
 
+  const { width } = useWindowSize();
+  const isMobile = width < 550;
+  const mobileYProgress = isMobile ? "start center" : "start center";
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start center", "end center"],
+    offset: [mobileYProgress, "end center"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], ["30%", "-50%"]);

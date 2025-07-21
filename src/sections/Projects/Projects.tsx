@@ -9,13 +9,18 @@ import Arweave from "../../../public/icons/projects/arweave.svg";
 import Bittensor from "../../../public/icons/projects/bittensor.svg";
 import Start from "../../../public/icons/projects/start.svg";
 import Telegram from "../../../public/icons/projects/telegram.svg";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const Projects = () => {
   const ref = useRef(null);
+  const { width } = useWindowSize();
+  const isMobile = width < 550;
+
+  const mobileYProgress = isMobile ? "start center" : "start start";
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end center"],
+    offset: [mobileYProgress, "end center"],
   });
 
   const { scrollYProgress: scrollYProgressX } = useScroll({
@@ -23,12 +28,12 @@ const Projects = () => {
     offset: ["start end", "end start"],
   });
 
+  const mobileYProgressY = isMobile
+    ? ["300px", "0px", "-20px"]
+    : ["100%", "0%", "-20%"];
+
   const x = useTransform(scrollYProgressX, [0, 1], ["0%", "-30%"]);
-  const y = useTransform(
-    scrollYProgress,
-    [0, 0.4, 1],
-    ["50vh", "0vh", "-20vh"]
-  );
+  const y = useTransform(scrollYProgress, [0, 0.4, 1], mobileYProgressY);
 
   return (
     <section

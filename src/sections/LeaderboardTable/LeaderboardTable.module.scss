@@ -39,7 +39,6 @@
       width: 100%;
       overflow-x: auto;
 
-      // Optional: for better UX on mobile
       scrollbar-width: thin;
 
       &::-webkit-scrollbar {
@@ -54,7 +53,7 @@
 
     .table {
       width: 100%;
-      min-width: 960px; // Ensures scroll triggers when screen < this
+      min-width: 960px;
       border-collapse: collapse;
       font-size: 16px;
       line-height: 100%;
@@ -89,6 +88,7 @@
 
 @media (max-width: 765px) {
   .leaderboardTableContainer {
+    height: 100vh;
     .leaderBoardTable {
       .leaderBoardTitleContainer {
         .leaderBoardTitle {

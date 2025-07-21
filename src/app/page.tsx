@@ -31,7 +31,7 @@ export default function Home() {
                   top: 0,
                   height: "120vh",
                   width: "100%",
-                  backgroundImage: "url(/pictures/background.webp)",
+                  backgroundImage: "url(/pictures/background.png)",
                   backgroundPosition: "top right",
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
