@@ -5,16 +5,17 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/UI";
 import styles from "./Hero.module.scss";
-// import { useWindowSize } from "@/hooks/useWindowSize";
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 const Hero = () => {
   const ref = useRef(null);
-//   const { width } = useWindowSize();
-//   const isMobile = width < 500;
+  const contentRef = useRef(null);
+  const { width } = useWindowSize();
+  const isMobile = width < 550;
 
-  const { scrollY: scrollYButton } = useScroll({
-    target: ref,
-    offset: ["start start", "end end"],
+  const { scrollYProgress: scrollYButton } = useScroll({
+    target: contentRef,
+    offset: ["start center", "end start"],
   });
 
   const { scrollYProgress: scrollYProgressTitle, scrollY: scrollYTitle } =
@@ -24,10 +25,13 @@ const Hero = () => {
     });
 
   const textY = useTransform(scrollYTitle, [0, 180], ["0%", "-15%"]);
-  const textScale = useTransform(scrollYTitle, [0, 180], ["1", "0.98"]);
-  const button1Y = useTransform(scrollYButton, [0, 100], ["400%", "-120%"]);
-  const button2Y = useTransform(scrollYButton, [0, 100], ["450%", "-120%"]);
-  const button3Y = useTransform(scrollYButton, [0, 100], ["500%", "-120%"]);
+  const textScale = useTransform(scrollYTitle, [0, 180], ["1", "0.95"]);
+  const button1Range = isMobile ? [0.3, 0.4] : [0.225, 0.4];
+  const button2Range = isMobile ? [0.4, 0.5] : [0.25, 0.425];
+  const button3Range = isMobile ? [0.5, 0.6] : [0.375, 0.45];
+  const button1Y = useTransform(scrollYButton, button1Range, ["400%", "-80%"]);
+  const button2Y = useTransform(scrollYButton, button2Range, ["450%", "-80%"]);
+  const button3Y = useTransform(scrollYButton, button3Range, ["500%", "-80%"]);
 
   const titleColor =
     "linear-gradient(109.22deg, #b53ea4 3.07%, #fc6f32 47.61%, #ff4a59 93.05%)";
@@ -45,8 +49,13 @@ const Hero = () => {
     <section
       ref={ref}
       className={classNames(styles.heroContainer, "container")}
+      style={{ position: isMobile ? "relative" : "absolute" }}
     >
-      <motion.div className={styles.heroInfo} style={{ y: textY }}>
+      <motion.div
+        className={styles.heroInfo}
+        style={{ y: textY }}
+        ref={contentRef}
+      >
         <motion.h1
           className={styles.title}
           transition={{

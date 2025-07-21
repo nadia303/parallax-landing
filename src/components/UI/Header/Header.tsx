@@ -8,15 +8,17 @@ import Button from "../Button/Button";
 import { useWindowSize } from "@/hooks/useWindowSize";
 
 const Header = () => {
-  const [isFixed, setIsFixed] = useState(false);
+  const [isFixed, setIsFixed] = useState(true);
   const ref = useRef(null);
   const { scrollY } = useScroll();
   const { width } = useWindowSize();
-  const isMobile = width < 500;
+  const isMobile = width < 550;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     if (!isMobile) {
       setIsFixed(latest < 140);
+    } else {
+      setIsFixed(false);
     }
   });
 

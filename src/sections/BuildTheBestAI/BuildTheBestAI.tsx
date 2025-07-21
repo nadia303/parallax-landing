@@ -1,13 +1,8 @@
 "use client";
 
 import classNames from "classnames";
-import {
-  motion,
-  useInView,
-  useScroll,
-  useTransform,
-} from "framer-motion";
-import { useRef} from "react";
+import { motion, useInView, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import styles from "./BuildTheBestAI.module.scss";
 import { Button } from "@/components/UI";
 import Star from "../../../public/icons/buildAI/star.svg";
@@ -19,7 +14,7 @@ const BuildTheBestAI = () => {
 
   const { scrollYProgress: yScrollProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end end"],
+    offset: ["start start", "end center"],
   });
 
   const { scrollYProgress: opacityScrollProgress } = useScroll({
@@ -27,7 +22,7 @@ const BuildTheBestAI = () => {
     offset: ["start start", "end center"],
   });
 
-  const y = useTransform(yScrollProgress, [0, 1], ["100%", "-20%"]);
+  const y = useTransform(yScrollProgress, [0, 0.3, 1], ["100%", "0%", "-20%"]);
   const opacity = useTransform(opacityScrollProgress, [0, 0.7, 1], [1, 1, 0.1]);
 
   return (

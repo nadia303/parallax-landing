@@ -124,8 +124,6 @@
 
 @media (max-width: 765px) {
   .heroContainer {
-    height: 300vh;
-
     .heroInfo {
       padding-bottom: 80px;
 
@@ -150,15 +148,18 @@
   }
 }
 
-@media (max-width: 500px) {
-  .heroContainer .heroInfo {
-    .title {
-      font-size: 3rem;
-    }
+@media (max-width: 550px) {
+  .heroContainer {
+    height: fit-content;
+    .heroInfo {
+      .title {
+        font-size: 3rem;
+      }
 
-    .buttonsContainer {
-      flex-direction: column;
-      width: 100%;
+      .buttonsContainer {
+        flex-direction: column;
+        width: 100%;
+      }
     }
   }
 }

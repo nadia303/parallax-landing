@@ -36,6 +36,12 @@
       align-items: center;
       gap: 180px;
       z-index: 10;
+      height: 102px;
+
+      svg {
+        height: 100px;
+        transform: scale(1);
+      }
     }
   }
 }
@@ -80,5 +86,11 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 765px) {
+  .projectsContainer {
+    height: 80vh;
   }
 }
